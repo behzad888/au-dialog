@@ -1,5 +1,7 @@
 # aurelia-dialog
 
+[Demo](http://behzad888.github.io/au-dialog/)
+
 ## Running The App
 
 To run the app, follow these steps.
