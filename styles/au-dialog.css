@@ -1,0 +1,379 @@
+body.au-modal-noscroll {
+  overflow: hidden !important;
+}
+@-webkit-keyframes au-modal-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes au-modal-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.au-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999999;
+  font-family: inherit;
+  overflow: hidden;
+}
+.au-modal .au-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: all .4s;
+          transition: all .4s;
+}
+.au-modal .au-modal-bg.seen {
+  opacity: 1;
+}
+.au-modal .au-modal-scrollpane {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+.au-modal .au-modal-box {
+  background: white;
+  border-radius: 4px;
+  position: relative;
+}
+.au-modal .au-modal-box div.closeIcon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  opacity: .6;
+  text-align: center;
+  display: none;
+}
+.au-modal .au-modal-box div.closeIcon:hover {
+  opacity: 1;
+}
+.au-modal .au-modal-box div.title {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 10px 15px 5px;
+}
+.au-modal .au-modal-box div.content {
+  padding-top: 10px;
+  padding: 10px 15px 10px
+  /*max-height: 350px;*/
+  /*overflow: scroll;*/
+  /*overflow-y: auto;*/
+}
+.au-modal .au-modal-box div.content:empty {
+  height: 40px;
+  position: relative;
+  opacity: 0.6;
+}
+.au-modal .au-modal-box div.content:empty:before {
+  content: '';
+  height: 20px;
+  width: 20px;
+  border: solid 2px #aaa;
+  /*background-color: #ddd;*/
+  position: absolute;
+  left: 50%;
+  margin-left: -45px;
+  border-radius: 20%;
+  -webkit-animation: au-modal-rotate 1s infinite;
+          animation: au-modal-rotate 1s infinite;
+}
+.au-modal .au-modal-box div.content:empty:after {
+  content: 'loading..';
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+}
+.au-modal .au-modal-box .buttons {
+  padding: 10px 15px;
+}
+.au-modal .au-modal-box .buttons button + button {
+  margin-left: 5px;
+}
+.au-modal .jquery-clear {
+  clear: both;
+}
+.au-modal.white .au-modal-bg {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.au-modal.white .au-modal-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.au-modal.white .au-modal-box .buttons {
+  float: right;
+}
+.au-modal.white .au-modal-box .buttons button {
+  border: none;
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: none;
+  -webkit-transition: background .1s;
+          transition: background .1s;
+  color: white;
+}
+.au-modal.white .au-modal-box .buttons button.btn-default {
+  box-shadow: none;
+  color: #333;
+}
+.au-modal.white .au-modal-box .buttons button.btn-default:hover {
+  background: #ddd;
+}
+.au-modal.black .au-modal-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.au-modal.black .au-modal-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: #444;
+  border-radius: 5px;
+  color: white;
+}
+.au-modal.black .au-modal-box .buttons {
+  float: right;
+}
+.au-modal.black .au-modal-box .buttons button {
+  border: none;
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: none;
+  -webkit-transition: background .1s;
+          transition: background .1s;
+  color: white;
+}
+.au-modal.black .au-modal-box .buttons button.btn-default {
+  box-shadow: none;
+  color: #fff;
+  background: none;
+}
+.au-modal.black .au-modal-box .buttons button.btn-default:hover {
+  background: #666;
+}
+.au-modal.hololight .au-modal-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.au-modal.hololight .au-modal-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.au-modal.hololight .au-modal-box div.title {
+  font-weight: inherit;
+  border-bottom: solid 2px #76CFDF;
+  color: #76CFDF;
+}
+.au-modal.hololight .au-modal-box .buttons {
+  border-top: solid 2px #E7E7E7;
+  width: 100%;
+  float: none;
+  padding: 0;
+}
+.au-modal.hololight .au-modal-box .buttons button {
+  margin: 0;
+  border: none;
+  background: #fff;
+  border-radius: 0px;
+  width: 50%;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+}
+.au-modal.hololight .au-modal-box .buttons button + button {
+  border-left: solid 2px #E7E7E7;
+}
+.au-modal.holodark .au-modal-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.au-modal.holodark .au-modal-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  background: #333;
+  overflow: hidden;
+}
+.au-modal.holodark .au-modal-box div.closeIcon {
+  color: white;
+}
+.au-modal.holodark .au-modal-box div.title {
+  font-weight: inherit;
+  border-bottom: solid 2px #76CFDF;
+  color: #76CFDF;
+}
+.au-modal.holodark .au-modal-box div.content {
+  color: white;
+}
+.au-modal.holodark .au-modal-box .buttons {
+  border-top: solid 2px rgba(255, 255, 255, 0.2);
+  width: 100%;
+  float: none;
+  padding: 0;
+}
+.au-modal.holodark .au-modal-box .buttons button {
+  margin: 0;
+  border: none;
+  background: #333;
+  border-radius: 0px;
+  width: 50%;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: none;
+}
+.au-modal.holodark .au-modal-box .buttons button + button {
+  border-left: solid 2px rgba(255, 255, 255, 0.2);
+}
+.au-modal .au-modal-box.hilight {
+  box-shadow: 0 0 20px red;
+}
+/*Transition rules*/
+.au-modal {
+  -webkit-perspective: 400px;
+          perspective: 400px;
+}
+.au-modal .au-modal-box {
+  opacity: 1;
+  -webkit-transition-property: -webkit-transform, opacity, box-shadow;
+          transition-property: transform, opacity, box-shadow;
+}
+.au-modal .au-modal-box.anim-top,
+.au-modal .au-modal-box.anim-left,
+.au-modal .au-modal-box.anim-right,
+.au-modal .au-modal-box.anim-bottom,
+.au-modal .au-modal-box.anim-opacity,
+.au-modal .au-modal-box.anim-zoom,
+.au-modal .au-modal-box.anim-scale,
+.au-modal .au-modal-box.anim-none,
+.au-modal .au-modal-box.anim-rotate,
+.au-modal .au-modal-box.anim-rotatex,
+.au-modal .au-modal-box.anim-rotatey,
+.au-modal .au-modal-box.anim-scaley,
+.au-modal .au-modal-box.anim-scalex {
+  /*visibility: hidden;*/
+  opacity: 0;
+}
+.au-modal .au-modal-box.anim-rotate {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.au-modal .au-modal-box.anim-rotatex {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+.au-modal .au-modal-box.anim-rotatey {
+  -webkit-transform: rotatey(90deg);
+      -ms-transform: rotatey(90deg);
+          transform: rotatey(90deg);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+.au-modal .au-modal-box.anim-scaley {
+  -webkit-transform: scaley(1.5);
+      -ms-transform: scaley(1.5);
+          transform: scaley(1.5);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+.au-modal .au-modal-box.anim-scalex {
+  -webkit-transform: scalex(1.5);
+      -ms-transform: scalex(1.5);
+          transform: scalex(1.5);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+.au-modal .au-modal-box.anim-top {
+  -webkit-transform: translate(0px, -100px);
+      -ms-transform: translate(0px, -100px);
+          transform: translate(0px, -100px);
+}
+.au-modal .au-modal-box.anim-left {
+  -webkit-transform: translate(-100px, 0px);
+      -ms-transform: translate(-100px, 0px);
+          transform: translate(-100px, 0px);
+}
+.au-modal .au-modal-box.anim-right {
+  -webkit-transform: translate(100px, 0px);
+      -ms-transform: translate(100px, 0px);
+          transform: translate(100px, 0px);
+}
+.au-modal .au-modal-box.anim-bottom {
+  -webkit-transform: translate(0px, 100px);
+      -ms-transform: translate(0px, 100px);
+          transform: translate(0px, 100px);
+}
+.au-modal .au-modal-box.anim-zoom {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.au-modal .au-modal-box.anim-scale {
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.au-modal .au-modal-box.anim-none {
+  display: none;
+}
+.au-modal.supervan .au-modal-bg {
+  background-color: rgba(54, 70, 93, 0.95);
+}
+.au-modal.supervan .au-modal-box {
+  background-color: transparent;
+}
+.au-modal.supervan .au-modal-box div.title {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: normal;
+}
+.au-modal.supervan .au-modal-box div.content {
+  text-align: center;
+  color: white;
+}
+.au-modal.supervan .au-modal-box .buttons {
+  text-align: center;
+}
+.au-modal.supervan .au-modal-box .buttons button {
+  font-size: 16px;
+  border-radius: 2px;
+  background: #303f53;
+  text-shadow: none;
+  border: none;
+  color: white;
+  width: 25%;
+  padding: 10px;
+}

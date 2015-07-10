@@ -1,0 +1,48 @@
+<!--<template>
+  <div class="page-host">
+      <h1 class="non-printable" style="  padding-top: 2%;">Dialog plugin</h1>
+      <div class="row">          
+          <compose class="col-md-10 printable" view-model="dialog"></compose>
+      </div>
+  </div>
+</template>-->
+<template>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">     
+       <a class="navbar-brand" href="#">      
+        <span>Quick Start</span>
+      </a>
+       <a class="navbar-brand" href="#buttons">      
+        <span>Button</span>
+      </a>
+       <a class="navbar-brand" href="#hideelem">      
+        <span>Hide Elements</span>
+      </a>
+       <a class="navbar-brand" href="#theme">      
+        <span>Theme</span>
+      </a>
+       <a class="navbar-brand" href="#customwidth">      
+        <span>Custom Width</span>
+      </a>
+       <a class="navbar-brand" href="#animations">      
+        <span>Animation</span>
+      </a>
+       <a class="navbar-brand" href="#autoclose">      
+        <span>Auto Close</span>
+      </a>
+       <a class="navbar-brand" href="#icons">      
+        <span>Icons</span>
+      </a>
+         <a class="navbar-brand" href="#keyboard">      
+        <span>Keyboard Actions</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
+    <div class="row" style="margin-top: 6%;">   
+      <router-view class="col-md-8"></router-view>
+    </div>
+  </div>
+</template>
